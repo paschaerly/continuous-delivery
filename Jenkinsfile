@@ -9,6 +9,7 @@ pipeline
        {
         echo 'Building...'
         sh "composer install"
+        sh "vendor/bin/phing setup"
        }
      }
     stage('Test')
