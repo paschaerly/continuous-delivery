@@ -51,7 +51,7 @@
 
     <target name="OrmConfig" >
       <echo msg="Fichier ORM global to local" />
-      <copy file="${project.basedir}/config/autoload/orm.global.php" tofile="${project.basedir}/config/autoload/orm.local.php" overwrite="true"/>  
+      <copy file="${project.basedir}/config/autoload/orm.global.php.dist" tofile="${project.basedir}/config/autoload/orm.local.php" overwrite="true" >  
           <filterchain>
             <replacetokens>
                <token key="host" value="${db.host}" />
@@ -61,6 +61,7 @@
                <token key="port" value="${db.port}" />
             </replacetokens>
           </filterchain>
+      </copy>
     </target>
             
 </project>
